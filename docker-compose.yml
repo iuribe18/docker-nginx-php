@@ -44,19 +44,19 @@ services:
           cpus: '1'
           memory: 1024M
 
-  ## DB Service
-  db:
-    image: mariadb:10.5
-    environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: my_database
-    networks:
-      - erp-network
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
+  # ## DB Service
+  # db:
+  #   image: mariadb:10.5
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root_password
+  #     MYSQL_DATABASE: my_database
+  #   networks:
+  #     - erp-network
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '1'
+  #         memory: 512M
 
 #Docker Networks
 networks:
