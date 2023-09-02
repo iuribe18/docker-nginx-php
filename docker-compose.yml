@@ -19,6 +19,11 @@ services:
       - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - erp-network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
 
   #Nginx Service
   nginx:
@@ -33,7 +38,12 @@ services:
       - ./config/conf.d/:/etc/nginx/conf.d/
     networks:
       - erp-network
-      
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1024M
+
   ## DB Service
   db:
     image: mariadb:10.5
