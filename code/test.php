@@ -1,0 +1,9 @@
+<?php
+try {
+    $conn = new PDO("mysql:host=db; dbname=your_database", "username", "password"); // replace db, your_database, username, password with your actual db info
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
