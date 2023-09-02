@@ -33,6 +33,20 @@ services:
       - ./config/conf.d/:/etc/nginx/conf.d/
     networks:
       - erp-network
+      
+  ## DB Service
+  db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+    networks:
+      - erp-network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
 
 #Docker Networks
 networks:
