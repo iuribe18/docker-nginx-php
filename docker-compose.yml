@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: config/dockerfile
-    image: christexe/php:7.4-fpm-alpine
+    image: php:8.1-fpm-alpine
     container_name: php_app
     restart: unless-stopped
     tty: true
@@ -18,7 +18,7 @@ services:
       - ./code/:/var/www/html
       - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
-      - labnet
+      - erp-network
 
   #Nginx Service
   nginx:
@@ -32,10 +32,9 @@ services:
       - ./code/:/var/www/html
       - ./config/conf.d/:/etc/nginx/conf.d/
     networks:
-      - labnet
+      - erp-network
 
 #Docker Networks
 networks:
-  labnet: 
-    external:
-      name: labnet
+  erp-network:
+    external: true

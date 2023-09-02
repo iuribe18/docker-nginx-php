@@ -6,8 +6,7 @@ WORKDIR /var/www/html
 
 # Install Additional dependencies
 RUN apk update && apk upgrade
-RUN apk add --no-cache \
-    build-base autoconf libtool json-c-dev shadow vim curl oniguruma libxml2-dev
+RUN apk add --no-cache build-base autoconf libtool json-c-dev shadow vim curl oniguruma libxml2-dev
 
 # Add and Enable PHP-PDO Extenstions
 RUN docker-php-ext-install bcmath
