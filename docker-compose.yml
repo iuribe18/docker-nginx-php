@@ -18,7 +18,7 @@ services:
       - ./code/:/var/www/html
       - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
-      - erp-network
+      - erp
     deploy:
       resources:
         limits:
@@ -37,7 +37,7 @@ services:
       - ./code/:/var/www/html
       - ./config/conf.d/:/etc/nginx/conf.d/
     networks:
-      - erp-network
+      - erp
     deploy:
       resources:
         limits:
@@ -46,5 +46,5 @@ services:
 
 #Docker Networks
 networks:
-  erp-network:
+  erp:
     external: true
